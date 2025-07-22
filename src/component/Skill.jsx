@@ -181,8 +181,13 @@ const Skills = () => {
             <h3 className="text-lg font-semibold text-gray-200 mb-4">
               Cloud services
             </h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 text-center ms-16">
-              <SiAmazon size={40} color="#FF9900" />
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 text-center">
+              {Cloud.map(({ label, Icon, color }, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <Icon size={40} color={color} />
+                  <p className="mt-2">{label}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
